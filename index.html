@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="">
+    <div class="flex flex-col items-center p-5">
+      <div class="mb-4 flex gap-5">
+        <label>
+          <span class="block font-bold mb-2">Board size</span>
+          <input
+            type="number"
+            value="4"
+            class="px-4 py-2 rounded border border-slate-600 w-36 focus:border-orange-600 focus:outline-orange-600 disabled:bg-slate-100 disabled:opacity-65"
+            id="board-size-input"
+          />
+        </label>
+
+        <label>
+          <span class="block font-bold mb-2">Queens number</span>
+          <input
+            type="number"
+            value="4"
+            class="px-4 py-2 rounded border border-slate-600 w-36 focus:border-orange-600 focus:outline-orange-600 disabled:bg-slate-100 disabled:opacity-65"
+            id="queens-number-input"
+          />
+        </label>
+
+        <label>
+          <span class="block font-bold mb-2">Population size</span>
+          <input
+            type="number"
+            value="10"
+            class="px-4 py-2 rounded border border-slate-600 w-36 focus:border-orange-600 focus:outline-orange-600 disabled:bg-slate-100 disabled:opacity-65"
+            id="population-size-input"
+          />
+        </label>
+
+        <label>
+          <span class="block font-bold mb-2">Mutation %</span>
+          <input
+            type="number"
+            value="2"
+            class="px-4 py-2 rounded border border-slate-600 w-36 focus:border-orange-600 focus:outline-orange-600 disabled:bg-slate-100 disabled:opacity-65"
+            id="mutation-input"
+          />
+        </label>
+
+        <label>
+          <span class="block font-bold mb-2">Pause between renders (ms)</span>
+          <input
+            type="number"
+            value="0"
+            class="px-4 py-2 rounded border border-slate-600 w-36 focus:border-orange-600 focus:outline-orange-600 disabled:bg-slate-100 disabled:opacity-65"
+            id="pause-input"
+          />
+        </label>
+      </div>
+
+      <div id="buttons-container">
+        <button
+          class="rounded bg-orange-600 text-white py-2 px-10 hover:opacity-80 active:opacity-60 active:scale-95 transition-all"
+          id="start-button"
+        >
+          Start
+        </button>
+      </div>
+
+      <div id="solution-found-text" class="hidden">
+        <p class="text-xl font-bold text-orange-600">Solution is found!</p>
+      </div>
+
+      <div class="py-2 text-xl">
+        <p>Current generation: <span id="current-generation-element"></span></p>
+      </div>
+
+      <div class="relative">
+        <canvas
+          class="border border-black"
+          id="board-canvas"
+          width="600"
+          height="600"
+        ></canvas>
+        <canvas
+          class="absolute inset-0"
+          id="overlay-canvas"
+          width="600"
+          height="600"
+        ></canvas>
+      </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
